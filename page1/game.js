@@ -29,6 +29,10 @@ function draw() {
     }
     ctx.fillStyle = "#ff0000";
     ctx.fillRect(x, y, 20, 20);
+    
+    ctx.fillStyle = "#ffffff";
+    ctx.font="30px Verdana";
+    ctx.fillText(""+score, 20, 50);
 }
 
 function update() {
@@ -63,6 +67,8 @@ function update() {
 	       (bulletY[j] - enemyY[i] + 20) * (enemyY[i] - bulletY[j] + 20) >= 0) {
 		enemyX.splice(i, 1);
 		enemyY.splice(i, 1);
+		bulletX.splice(j, 1);
+		bulletY.splice(j, 1);
 		i--;
 		j = 0;
 		score++;
