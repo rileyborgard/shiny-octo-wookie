@@ -14,6 +14,8 @@ var enemyX = [];
 var enemyY = [];
 var counter = 0;
 
+var score = 0;
+
 function draw() {
     ctx.fillStyle = "#000000";
     ctx.fillRect(0, 0, 400, 400);
@@ -53,6 +55,18 @@ function update() {
             i--;
 	}
 	enemyY[i] += 8;
+    }
+
+    for(var i = 0; i < enemyX.length; i++) {
+	for(var j = 0; j < bulletX.length; j++) {
+	    if((bulletX[j] - enemyX[i] + 20) * (enemyX[i] - bulletX[j] + 20) >= 0 &&
+	       (bulletY[j] - enemyY[i] + 20) * (enemyY[i] - bulletY[j] + 20)) {
+		enemyX.splice(i, 1);
+		enemyY.splice(i, 1);
+		i--;
+		j = 0;
+	    } 
+	}
     }
 
     if(counter > 20) {
