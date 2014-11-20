@@ -60,7 +60,7 @@ function update() {
     for(var i = 0; i < enemyX.length; i++) {
 	for(var j = 0; j < bulletX.length; j++) {
 	    if((bulletX[j] - enemyX[i] + 20) * (enemyX[i] - bulletX[j] + 20) >= 0 &&
-	       (bulletY[j] - enemyY[i] + 20) * (enemyY[i] - bulletY[j] + 20)) {
+	       (bulletY[j] - enemyY[i] + 20) * (enemyY[i] - bulletY[j] + 20) >= 0) {
 		enemyX.splice(i, 1);
 		enemyY.splice(i, 1);
 		i--;
