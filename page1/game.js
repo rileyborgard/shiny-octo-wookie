@@ -65,6 +65,7 @@ function update() {
 		enemyY.splice(i, 1);
 		i--;
 		j = 0;
+		score++;
 	    } 
 	}
     }
